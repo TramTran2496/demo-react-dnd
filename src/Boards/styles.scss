@@ -1,0 +1,75 @@
+@import '../App.scss';
+
+.board {
+  width: 300px;
+  margin: 10px;
+
+  .container {
+    width: 100%;
+    margin: 10px auto;
+
+    &.highlighted {
+      border: solid 1px $darkGreen;
+    }
+
+    &.banned {
+      border: solid 1px $darkRed;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    .ticket {
+      padding: 10px;
+      border-radius: 2px;
+      cursor: grab;
+      position: relative;
+
+      &.high {
+        background-color: $red;
+        border: solid 1px $darkRed;
+      }
+
+      &.medium {
+        background-color: $green;
+        border: solid 1px $darkGreen;
+      }
+
+      &.low {
+        background-color: $blue;
+        border: solid 1px $darkBlue;
+      }
+
+      &.preview {
+        border: dashed 1px $grey;
+        color: transparent;
+      }
+
+      &.placeholder {
+        border: dashed 1px $grey;
+        color: grey;
+        cursor: default;
+      }
+
+      &.dragging {
+        opacity: 0.5;
+      }
+
+      &.disabled {
+        border-color: $grey;
+        cursor: default;
+      }
+
+      .delete-btn {
+        outline: none;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+      }
+    }
+  }
+}
